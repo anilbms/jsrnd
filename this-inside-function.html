@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Function curry</title>
+</head>
+<body>
+    <h1>"this" inside function, while passing <strong>null</strong>first argument </h1>
+	<script type="text/javascript">
+		(function  () {
+			// define a function
+            var tellHello = function (name) {
+                console.log("I am inside funtion,  this points to" + this.toString() );
+            return "Hello" + (name ? ", " + name : "") + "!";
+            };
+            
+            // invoke function
+            console.log(tellHello()); // "Hello!"
+            
+            console.log(tellHello("JS")); // "Hello, JS!"
+            
+            // by using apply
+            console.log("using apply with null as 1st parameter- " + tellHello.apply(null, ["JS"]));
+		})();
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Function curry</title>
+</head>
+<body>
+    <h1>Check your dev tool console for result</h1>
+	<script type="text/javascript">
+		(function  () {
+			// define a function
+            var tellHello = function (name) {
+            return "Hello" + (name ? ", " + name : "") + "!";
+            };
+            
+            // invoke function
+            console.log(tellHello()); // "Hello!"
+            
+            console.log(tellHello("JS")); // "Hello, JS!"
+            
+            // by using apply
+            console.log("using apply - " + tellHello.apply(null, ["JS"]));
+		})();
+	</script>
+</body>
+</html>
